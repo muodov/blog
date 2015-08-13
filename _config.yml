@@ -1,16 +1,17 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Muodov's Honey Jar
+email:       muodov@gmail.com
+author:      Maxim Tsoy
+description: "Maxim Tsoy's personal blog"
 baseurl:     ""
-url:         "http://pixyll.com"
+abouturl:    "https://zok.pw"
+url:         "https://blog.zok.pw"
 
 # Google analytics
-google_analytics: UA-53548208-1
+google_analytics: UA-66022657-1
 
 # Optional features
-animated:           false
+animated:           true
 show_related_posts: false
 show_post_footers:  false
 show_social_icons:  false
@@ -20,11 +21,11 @@ show_social_icons:  false
 disqus_shortname:
 
 # Social icons
-github_username:
+github_username: muodov
 stackoverflow_id:
-twitter_username:
+twitter_username: muodov
 google_plus_id:
-linkedin_username:
+linkedin_username: maxtsoy
 angellist_username:
 medium_id:
 bitcoin_url:
@@ -35,13 +36,13 @@ flattr_button:
 show_sharing_icons: false
 share_text: 'Share this post!'
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
-share_linkedin: false
+share_facebook: true
+share_twitter: true
+share_googleplus: true
+share_linkedin: true
 share_digg: false
-share_tumblr: false
-share_reddit: false
+share_tumblr: true
+share_reddit: true
 share_stumbleupon: false
 share_hackernews: false
 
