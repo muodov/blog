@@ -4,6 +4,7 @@ email:       muodov@gmail.com
 author:      Maxim Tsoy
 description: "Maxim Tsoy's personal blog"
 baseurl:     ""
+domain:      "blog.zok.pw"
 abouturl:    "https://zok.pw"
 url:         "https://blog.zok.pw"
 
