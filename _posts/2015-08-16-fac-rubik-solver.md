@@ -161,7 +161,7 @@ extensive as seen on the following (_**clickable**_) plot (by the way, you shoul
 
 Given these results, I came up with two fundamentally different approaches to color recognition:
 
-#### Color ranging
+#### 1. Color ranging
 
 Find the ranges (cubical region in RGB color space) for each color and just
 look for a suitable range every time we scan a facelet. In this case each combination
@@ -171,7 +171,7 @@ particular cube colors. And in the end it turned out to be not usable under
 different ambient light conditions since some ranges overlap and therefore
 become ambiguous.
 
-#### True clustering
+#### 2. True clustering
 
 Make artificial tweakings on raw values to make the same colors in different
 positions look similar. If we can do this, we can apply some
@@ -186,6 +186,7 @@ but not the exact one.
 
 Each of the approaches above have their pros and cons. So after all we used a
 sort of a mixed algorithm:
+
 1. we do some artificial calibrations based on gathered statistics to normalize the readings
 2. convert values from RGB to HSV
 3. find a white cluster, by taking out 9 facelets with the least Saturation
