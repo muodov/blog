@@ -57,7 +57,7 @@ Basically, instead of reading the voltage, we are counting the time needed to
 charge the capacitor. This time is proportional to LDR resistance, so in the end
 we can estimate its value.
 
-![LDR reading hack schematics](/images/ldrcap.png)
+![LDR reading hack schematics](/images/ldrcap.jpg)
 
 Of course, it is not reliable. Mainly, because there
 are a lot of background processes running alongside your program on Raspberry, so
