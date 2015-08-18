@@ -4,6 +4,7 @@ title:      FAC system Rubik's Cube solver
 summary:    A story behind FAC Rubik's Cube solver machine by Wilbert Swinkels (and me)
 categories: hacking
 published:  true
+comments:   true
 ---
 
 ![Rubik's Cube solver](/images/rubikmachine.jpg)
