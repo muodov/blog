@@ -17,7 +17,7 @@ for creating [awesomeness](https://www.youtube.com/user/Meccanokinematics), so
 this was a great luck for me when he offered to help him with the [Rubik's cube
 solving machine](http://wiswin.nl/FAC system Rubik cube solver.htm).
 
-The machine looked absolutely marvellous. Just like all other Wilbert's creations,
+The machine looked absolutely marvelous. Just like all other Wilbert's creations,
 it is a piece of art by itself. Besides, color cubes had already [carried me away once](https://play.google.com/store/apps/details?id=com.muodov.papercube). With no doubt,
 I accepted his offer.
 
@@ -32,11 +32,11 @@ grippers and scanner. However, the software part essentially did not exist.
 
 First of all, we decided to replace Arduino board with Raspberry Pi. This
 was for a number of reasons: it seemed that we didn't really need low-level capabilities
-of Arduino, and I didn't feel like writing everything in <del>retarded</del> dialect
+of Arduino, and I didn't feel like writing everything in the <del>retarded</del> dialect
 of C used by Arduino. Moreover, sophisticated cube solving algorithms required
 quite a lot of memory, that Arduino cannot provide.
 
-Standard version of Raspberry Pi did not have enough GPIO pins, so
+The standard version of Raspberry Pi did not have enough GPIO pins, so
 we got a [Compute Module Development Kit](https://www.raspberrypi.org/products/compute-module-development-kit/). That one is really cool: not only it has a way more
 convenient pinout with 45 controllable pins, but it also has two camera
 slots. We were so happy with it that we bought two more boards for future projects :)
@@ -45,7 +45,7 @@ slots. We were so happy with it that we bought two more boards for future projec
 
 Of course, this change from Arduino to Raspberry required some changes in circuits
 as well. One of the problems was that you can only get 3.3V from Raspberry's
-GPIO pin, whereas Arduino gives you 5V. Fortunately, our motor drivers still worked
+GPIO pin whereas Arduino gives you 5V. Fortunately, our motor drivers still worked
 under lower voltage, so we only needed to change resistors in scanner circuit.
 
 Much more annoying problem was that Raspberry didn't have analog input. This
@@ -60,7 +60,7 @@ we can estimate its value.
 ![LDR reading hack schematics](/images/ldrcap.png)
 
 Of course, it is not reliable. Mainly, because there
-is a lot of background processes running alongside your program on Raspberry, so
+are a lot of background processes running alongside your program on Raspberry, so
 you always get random deviations in readings. This is not so important if you
 just need to _detect_ the light with LDR, but can have nasty consequences if you
 want to compare the amounts of light. To circumvent this effect, we have to do
@@ -78,10 +78,10 @@ to solve arbitrary cube) was [only found in 2010](http://cube20.org)!
 
 While we did care about the speed of solving, we had to take into account that
 Raspberry Pi has limited computational powers. Therefore, we could not use the
-[optimal solver](http://cflmath.com/Rubik/optimal_solver.html) as it would require a lot of time for bruteforcing. After all, we ended up with a great [two phase algorithm](http://kociemba.org/cube.htm)
+[optimal solver](http://cflmath.com/Rubik/optimal_solver.html) as it would require a lot of time for bruteforcing. After all, we ended up with a great [two-phase algorithm](http://kociemba.org/cube.htm)
 by Herbert Kociemba.
 
-Original implementation of two-phase algorithm is only available in Java. First thing
+The original implementation of the two-phase algorithm is only available in Java. First thing
 I did was translating it to Python. It turned out to be quite easy and
 straightforward. However, in the beginning I didn't realize that solving the Rubik's
 cube requires __a lot__ of resources. When I first started Python solver, it took
@@ -89,7 +89,7 @@ about one minute (!) to find a solution on my MacBook.
 
 [PyPy](http://pypy.org) showed much better results, it reduced the time to one second
 on the laptop, but it was still about a minute on Raspberry. After a day trying
-different ways to speedup Python code, I decided to go for a pure C version.
+different ways to speed up Python code, I decided to go for a pure C version.
 This solved all problems: now it takes about one second to find a solution, even
 on Raspberry Pi. This was good enough for this project.
 
@@ -99,7 +99,7 @@ I have published both Python and C versions of the solver on [GitHub](https://gi
 
 Next step was to build a program that would actually control the machine.
 This implied moving the motors, carefully handling gear ratios, keeping in mind
-the limitations forced by assembly (for example, side grippers can only be rotated
+the limitations forced by the assembly (for example, side grippers can only be rotated
 when the bottom gripper is in certain position). Some additional code was
 required to handle user input (machine has a multi-purpose controlling button),
 and to optimize gripper movements. All in all, there was nothing special
@@ -113,10 +113,10 @@ I rendered nice images to visualize the readings.
 
 ## Scanning and color recognition (a.k.a. devil in details)
 
-Up to this point things were exciting, but not difficult. And we were ready to
+Up to this point, things were exciting, but not difficult. And we were ready to
 open champagne to celebrate our great success. The only thing left was to
-recognize the colors using LDR-based scanner. The idea was as simple as it could
-be: we had 3 sets of LEDs (<span class="red">red</span>, <span class="green">green</span>, and <span class="blue">blue</span>) which we turned on one by one,
+recognize the colors using an LDR-based scanner. The idea was as simple as it could
+be: we had 3 sets of LEDs (<span class="red">red</span>, <span class="green">green</span>, and <span class="blue">blue</span>) which we turned on one by one
 and captured reflected light with LDRs. Essentially, this gave us RGB values
 which we could use for color recognition. We already had a proof-of-concept
 program which seemed to work well on Arduino, so we didn't expect surprises here.
@@ -131,8 +131,8 @@ scanner, as described above.
 
 ![sensor board](/images/sensorboard.jpg)
 
-Due to the hack with capacitor, it introduced random errors in our readings.
-So first thing was to make several readings in a row and get rid of
+Due to the hack with capacitors, it introduced random errors in our readings.
+So the first thing was to do several readings in a row and get rid of
 [outliers](https://en.wikipedia.org/wiki/Outlier). Once we did that, we could
 get something like following (these are results of scanning a solved cube in a dark room):
 
@@ -164,12 +164,12 @@ Given these results, I came up with two fundamentally different approaches to co
 
 #### 1. Color ranging
 
-Find the ranges (cubical region in RGB color space) for each color and just
-look for a suitable range every time we scan a facelet. In this case each combination
-of facelet position, LDR and LED color should be handled separately. While this
+Find the ranges (a cubical region in RGB color space) for each color and just
+look for a suitable range every time we scan a facelet. Each combination
+of facelet position, LDR, and LED color should be handled separately. While this
 approach is quite straightforward and easy to implement, we have to stick to
 particular cube colors. And in the end it turned out to be not usable under
-different ambient light conditions since some ranges overlap and therefore
+different ambient light conditions since some ranges overlap and, therefore,
 become ambiguous.
 
 #### 2. True clustering
@@ -185,7 +185,7 @@ but not the exact one.
 
 #### Compromise
 
-Each of the approaches above have their pros and cons. So after all we used a
+Each of the approaches above has its pros and cons. So after all we used a
 sort of a mixed algorithm:
 
 1. we do some artificial calibrations based on gathered statistics to normalize the readings
@@ -198,7 +198,7 @@ sort of a mixed algorithm:
 
 Even with a decent clustering algorithm, scanning was still tricky due to the
 ambient light. What seemed to work perfectly in a dark room, failed miserably
-under a bright sun, and vise versa. So the final step was to get rid of the
+under a bright sun, and vice versa. So the final step was to get rid of the
 ambient light. Wilbert had to do quite some work on the scanner module
 to isolate LDRs from ambient light. It took 3 iterations: each time we thought
 it was ready, but each time we would find another hole through which ambient light
