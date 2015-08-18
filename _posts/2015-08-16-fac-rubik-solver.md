@@ -73,7 +73,7 @@ process takes so long.
 The most important part of the solving program is a solving algorithm. There is
 [quite some](https://en.wikipedia.org/wiki/Optimal_solutions_for_Rubik%27s_Cube) serious mathematical work already done on Rubik's cube. If you are
 into algebra and combinatorics, it might be pretty interesting.
-For instance, I was very suprised that the God number (the exact lower bound for a number of moves needed
+For instance, I was very surprised that the God number (the exact lower bound for a number of moves needed
 to solve arbitrary cube) was [only found in 2010](http://cube20.org)!
 
 While we did care about the speed of solving, we had to take into account that
@@ -144,7 +144,7 @@ get something like following (these are results of scanning a solved cube in a d
 ![yellow](/images/readings_uncalibrated/yellow.png)
 
 As you can see, this is far from ideal. First, results for the same color in different
-positions significally differ due to the fact that every LDR and every LED is
+positions significantly differ due to the fact that every LDR and every LED is
 pointing in a slightly different direction. Second, sometimes different colors
 can have overlapping value ranges (for example, red and orange often appear the same).
 Finally, all the readings are highly sensitive to the ambient light.
@@ -174,7 +174,7 @@ become ambiguous.
 
 #### 2. True clustering
 
-Make artificial tweakings on raw values to make the same colors in different
+Make artificial tweaks on raw values to make the same colors in different
 positions look similar. If we can do this, we can apply some
 [clustering algorithm](https://en.wikipedia.org/wiki/Cluster_analysis) to distinguish
 colors. The most difficult part here was to figure out proper tweaking coefficients
@@ -201,7 +201,7 @@ ambient light. What seemed to work perfectly in a dark room, failed miserably
 under a bright sun, and vise versa. So the final step was to get rid of the
 ambient light. Wilbert had to do quite some work on the scanner module
 to isolate LDRs from ambient light. It took 3 iterations: each time we thought
-it was ready, but every time we found another hole through which ambient light
+it was ready, but each time we would find another hole through which ambient light
 could reach the LDRs:
 
 ![scanner](/images/scanner.jpg)
