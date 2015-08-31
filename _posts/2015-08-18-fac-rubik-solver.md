@@ -5,7 +5,13 @@ summary:    A story behind FAC Rubik's Cube solver machine by Wilbert Swinkels (
 categories: hacking
 published:  true
 comments:   true
+update_date: 2015-08-31
 ---
+
+## UPD:
+
+Since this post was published, we upgraded the scanner on the machine, and now the
+scanning process takes way less time. Check out the Hardware section.
 
 ![Rubik's Cube solver](/images/rubikmachine.jpg)
 
@@ -30,6 +36,7 @@ grippers and scanner. However, the software part essentially did not exist.
 
 ## Hardware
 
+### Main board
 First of all, we decided to replace Arduino board with Raspberry Pi. This
 was for a number of reasons: it seemed that we didn't really need low-level capabilities
 of Arduino, and I didn't feel like writing everything in the <del>retarded</del> dialect
@@ -42,6 +49,8 @@ convenient pinout with 45 controllable pins, but it also has two camera
 slots. We were so happy with it that we bought two more boards for future projects :)
 
 ![Raspberry Pi mounted on the machine](/images/raspberry.jpg)
+
+### Capacitor-based scanner
 
 Of course, this change from Arduino to Raspberry required some changes in circuits
 as well. One of the problems was that you can only get 3.3V from Raspberry's
@@ -59,14 +68,34 @@ we can estimate its value.
 
 ![LDR reading hack schematics](/images/ldrcap.jpg)
 
-Of course, it is not reliable. Mainly, because there
+Of course, it was not reliable. Mainly, because there
 are a lot of background processes running alongside your program on Raspberry, so
 you always get random deviations in readings. This is not so important if you
 just need to _detect_ the light with LDR, but can have nasty consequences if you
-want to compare the amounts of light. To circumvent this effect, we have to do
-multiple readings every time, detect [outliers](https://en.wikipedia.org/wiki/Outlier), and calculate an average between
-the remaining values. Needless to say, this is the main reason why the scanning
-process takes so long.
+want to compare the amounts of light. To circumvent this effect, we had to do
+multiple readings every time, detect [outliers](https://en.wikipedia.org/wiki/Outlier), 
+and calculate an average between the remaining values.
+
+Here is the video of a machine with capacitor-based scanner:
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/z4iJ0hNQulo" frameborder="0" allowfullscreen></iframe>
+
+### Arduino-controlled scanner
+
+Though we made the capacitor-based scheme working, it was ridiculously slow.
+It would take about two minutes to scan the whole cube. So we decided to get a
+small Arduino board specifically to control the scanner.
+
+![Arduino-based scanner](/images/arduino-scanner.jpg)
+
+It turned out very easy to connect Arduino to Raspberry and make them work together.
+We only needed two wires, [this](https://www.sparkfun.com/products/12009) tiny
+little level converter in between - and voila: we have a serial connection between
+the boards. I also used cool [Min protocol](https://github.com/interactive-matter/MinProtocol) on top of serial to make it more convenient.
+
+This change dramatically decreased the time required for scanning the cube.
+Since Arduino can read the voltage directly from the LDR, we don't need to wait
+until capacitor is charged, and we don't need to do it multiple times anymore!
 
 ## Solving algorithm
 
@@ -112,6 +141,10 @@ convenient and I could easily debug parts of the program. To debug the scanning,
 I rendered nice images to visualize the readings.
 
 ## Scanning and color recognition (a.k.a. devil in details)
+
+*__UPD:__ This section describes the previous version of the scanner (capacitor-based).
+New Arduino-controlled scanner made the readings much more reliable and fast. However,
+color clustering algorithm remained the same.*
 
 Up to this point, things were exciting, but not difficult. And we were ready to
 open champagne to celebrate our great success. The only thing left was to
@@ -217,7 +250,7 @@ methods and clustering algorithms, dust off my school notes on electronics
 (though we only need the basics here), and discover a number of useful tools
 and services on the way. This is why I am so happy I had a chance to work on this.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1QEKhrbQy8" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/fH7t6Xfnmm4" frameborder="0" allowfullscreen></iframe>
 
 That said, this machine was only a prototype. We didn't contemplate to challenge
 record-breaking robots in terms of solving speed, and we didn't
@@ -228,7 +261,7 @@ the next generation of this machine.
 
 Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 
-Final video: [YouTube](https://youtu.be/Z1QEKhrbQy8)
+Final video: [YouTube](https://youtu.be/fH7t6Xfnmm4)
 
 Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
