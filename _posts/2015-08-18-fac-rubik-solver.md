@@ -88,7 +88,7 @@ small Arduino board specifically to control the scanner.
 
 ![Arduino-based scanner](/images/arduino-scanner.jpg)
 
-It turned out very easy to connect Arduino to Raspberry and make them work together.
+It turned out to be very easy to connect Arduino to Raspberry and make them work together.
 We only needed two wires, [this](https://www.sparkfun.com/products/12009) tiny
 little level converter in between - and voila: we have a serial connection between
 the boards. I also used cool [Min protocol](https://github.com/interactive-matter/MinProtocol) on top of serial to make it more convenient.
