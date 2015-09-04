@@ -5,7 +5,7 @@ summary:    A story behind FAC Rubik's Cube solver machine by Wilbert Swinkels (
 categories: hacking
 published:  true
 comments:   true
-update_date: 2015-08-31
+update_date: 2015-09-04
 ---
 
 ## UPD:
@@ -189,6 +189,12 @@ extensive as seen on the following (_**clickable**_) plot (by the way, you shoul
 <div>
     <a href="https://plot.ly/~muodov/34/" target="_blank" title="RGB uncalibrated" style="display: block; text-align: center;"><img src="https://plot.ly/~muodov/34.png" alt="RGB uncalibrated" style="max-width: 100%;width: 792px;"  width="792" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="muodov:34"  src="https://plot.ly/embed.js" async></script>
+</div>
+
+*__UPD:__ Arduino-based scanner showed much better results:*
+<div>
+    <a href="https://plot.ly/~muodov/115/" target="_blank" title="Arduino scanner (after calibration)" style="display: block; text-align: center;"><img src="https://plot.ly/~muodov/115.png" alt="Arduino scanner (after calibration)" style="max-width: 100%;width: 792px;"  width="792" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="muodov:115"  src="https://plot.ly/embed.js" async></script>
 </div>
 
 ### Clustering color values
