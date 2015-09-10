@@ -15,6 +15,15 @@ scanning process takes way less time. Check out the Hardware section.
 
 ![Rubik's Cube solver](/images/rubikmachine.jpg)
 
+## TL;DR
+
+For those who don't feel like reading any further, here are some links:
+
+Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
+Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
+Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
+More about FAC system: [FAC system](http://www.wiswin.nl/FAC%20system.htm)
+
 ## Introduction
 
 About three months ago I was introduced to [Wilbert Swinkels](http://wiswin.nl).
@@ -262,13 +271,3 @@ That said, this machine was only a prototype. We didn't contemplate to challenge
 record-breaking robots in terms of solving speed, and we didn't
 really make the most of the hardware parts. But we will definitely go for it in
 the next generation of this machine.
-
-## Links
-
-Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
-
-Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
-
-Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
-
-More about FAC system: [FAC system](http://www.wiswin.nl/FAC%20system.htm)
