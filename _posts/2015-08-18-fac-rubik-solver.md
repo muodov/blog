@@ -5,7 +5,7 @@ summary:    A story behind FAC Rubik's Cube solver machine by Wilbert Swinkels (
 categories: hacking
 published:  true
 comments:   true
-update_date: 2015-09-04
+update_date: 2015-09-10
 ---
 
 ## UPD:
@@ -256,7 +256,7 @@ methods and clustering algorithms, dust off my school notes on electronics
 (though we only need the basics here), and discover a number of useful tools
 and services on the way. This is why I am so happy I had a chance to work on this.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/fH7t6Xfnmm4" frameborder="0" allowfullscreen></iframe>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/vpAKfSYueMI" frameborder="0" allowfullscreen></iframe>
 
 That said, this machine was only a prototype. We didn't contemplate to challenge
 record-breaking robots in terms of solving speed, and we didn't
@@ -267,7 +267,7 @@ the next generation of this machine.
 
 Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 
-Final video: [YouTube](https://youtu.be/fH7t6Xfnmm4)
+Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
 
 Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
