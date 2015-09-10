@@ -19,13 +19,10 @@ scanning process takes way less time. Check out the Hardware section.
 
 For those who don't feel like reading any further, here are some links:
 
-Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
-
-Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
-
-Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
-
-More about FAC system: [FAC system](http://www.wiswin.nl/FAC%20system.htm)
+* Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
+* Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
+* Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
+* More about FAC system: [FAC system](http://www.wiswin.nl/FAC%20system.htm)
 
 ## Introduction
 
