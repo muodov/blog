@@ -5,15 +5,15 @@ summary:    A story behind FAC Rubik's Cube solver machine by Wilbert Swinkels (
 categories: hacking
 published:  true
 comments:   true
-update_date: 2015-09-10
+update_date: 2015-09-15
 ---
 
-## UPD:
+## _Update:_
 
 Since this post was published, we upgraded the scanner on the machine, and now the
 scanning process takes way less time. Check out the Hardware section.
 
-![Rubik's Cube solver](/images/rubikmachine.jpg)
+<iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FvpAKfSYueMI%3Ffeature%3Doembed&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DvpAKfSYueMI&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FvpAKfSYueMI%2Fhqdefault.jpg&key=internal&type=text%2Fhtml&schema=youtube" width="640" height="360" scrolling="no" frameborder="0" allowfullscreen></iframe>
 
 ## TL;DR
 
@@ -154,7 +154,7 @@ I rendered nice images to visualize the readings.
 
 ## Scanning and color recognition (a.k.a. devil in details)
 
-*__UPD:__ This section describes the previous version of the scanner (capacitor-based).
+*__Update:__ This section describes the previous version of the scanner (capacitor-based).
 New Arduino-controlled scanner made the readings much more reliable and fast. However,
 color clustering algorithm remained the same.*
 
@@ -268,7 +268,7 @@ methods and clustering algorithms, dust off my school notes on electronics
 (though we only need the basics here), and discover a number of useful tools
 and services on the way. This is why I am so happy I had a chance to work on this.
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/vpAKfSYueMI" frameborder="0" allowfullscreen></iframe>
+![Rubik's Cube solver](/images/rubikmachine.jpg)
 
 That said, this machine was only a prototype. We didn't contemplate to challenge
 record-breaking robots in terms of solving speed, and we didn't
