@@ -13,7 +13,7 @@ update_date: 2015-09-15
 Since this post was published, we upgraded the scanner on the machine, and now the
 scanning process takes way less time. Check out the Hardware section.
 
-<iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FvpAKfSYueMI%3Ffeature%3Doembed&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DvpAKfSYueMI&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FvpAKfSYueMI%2Fhqdefault.jpg&key=internal&type=text%2Fhtml&schema=youtube" width="640" height="360" scrolling="no" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/vpAKfSYueMI" width="100%" height="360px" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
 
 ## TL;DR
 
@@ -87,7 +87,7 @@ and calculate an average between the remaining values.
 
 Here is the video of a machine with capacitor-based scanner:
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/z4iJ0hNQulo" frameborder="0" allowfullscreen></iframe>
+<iframe  width="100%" height="360px" src="https://www.youtube.com/embed/z4iJ0hNQulo" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe>
 
 ### Arduino-controlled scanner
 

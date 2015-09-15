@@ -19,9 +19,13 @@ html, body {
 }
 
 img {
-  width: auto;
   max-width: 100%;
   border-radius: 3px;
+}
+
+em img {
+  max-width: 100%;
+  margin-left: 0;
 }
 
 body {

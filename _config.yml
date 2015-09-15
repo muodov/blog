@@ -7,6 +7,7 @@ baseurl:     ""
 domain:      "blog.zok.pw"
 abouturl:    "https://zok.pw"
 url:         "https://blog.zok.pw"
+date_format: "%b %-d, %Y"
 
 # Google analytics
 google_analytics: UA-66022657-1
@@ -16,6 +17,7 @@ animated:           true
 show_related_posts: false
 show_post_footers:  false
 show_social_icons:  false
+ajaxify_contact_form: false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
@@ -55,5 +57,3 @@ permalink:    pretty
 paginate:     4
 sass:
   compressed: true
-gems:
-  - jekyll-sitemap
