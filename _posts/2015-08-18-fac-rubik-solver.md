@@ -19,6 +19,7 @@ scanning process takes way less time. Check out the Hardware section.
 
 For those who don't feel like reading any further, here are some links:
 
+* [Project page](http://wiswin.nl/FAC system Rubik cube solver.htm) (a new website coming soon)
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
