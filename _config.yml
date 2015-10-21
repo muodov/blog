@@ -13,7 +13,7 @@ date_format: "%b %-d, %Y"
 google_analytics: UA-66022657-1
 
 # Optional features
-animated:           true
+animated:           false
 show_related_posts: false
 show_post_footers:  false
 show_social_icons:  false
