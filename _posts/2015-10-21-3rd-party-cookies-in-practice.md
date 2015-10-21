@@ -43,16 +43,16 @@ header from server is just ignored.
 `localStorage`/`sessionStorage` is a bit more tricky:
 
 * in Google Chrome any attempt to access `localStorage` will result in `DOMException`
-* in Safari, `localStorage.getItem()` and `localStorage` itself doesn't raise errors, but
+* in Safari, `localStorage.getItem()` and `localStorage` itself don't raise errors, but
 if you try to use `localStorage.setItem()`, it will give you a `QuotaExceededError`
 * in Firefox, localStorage and sessionStorage are still working inside iframes.
 So you can save stuff in localStorage, and it will stay there. However, this
-[will be changed](https://bugzilla.mozilla.org/show_bug.cgi?id=536509) in upcoming Firefox 43.
+[will change](https://bugzilla.mozilla.org/show_bug.cgi?id=536509) in upcoming Firefox 43.
 
 ## Detection
 
 If you need to detect if 3rd-party cookies are enabled, one option is to take
-advantage of always-empty document.cookie. Just create an iframe pointing to
+advantage of always-empty `document.cookie`. Just create an iframe pointing to
 a page on another domain like this:
 
 {% highlight html %}
@@ -83,7 +83,7 @@ alert(thirdPartyCookiesEnabled);
 
 There is one workaround though. If you really need to access cookies on another domain,
 just make sure that they are 1st-party. Essentially, it means **_redirects_**.
-So you can redirect user to a page to another domain, set the cookie there, and then
+So you can redirect user to a page on another domain, set the cookie there, and then
 immediately redirect him back. This is not the best user experience, but it still works.
 
 Hope this will help someone.
