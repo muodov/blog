@@ -38,7 +38,7 @@ This is something that you would expect, actually.
 will be thrown, but `document.cookie` **_will always return an empty string_**, even
 if you set it to something.
 * No cookies in CORS requests too, even if you use `.withCredentials` parameter. Cookie
-header ffrom server is just ignored.
+header from server is just ignored.
 
 `localStorage`/`sessionStorage` is a bit more tricky:
 
