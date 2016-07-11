@@ -5,6 +5,7 @@ summary:    Quick overview of the effects of disabling 3rd-party cookies in brow
 categories: web
 published:  true
 comments:   true
+update_date: 2016-07-11
 ---
 
 Recent days I was building a cross-site communication tool.
@@ -49,6 +50,13 @@ if you try to use `localStorage.setItem()`, it will give you a `QuotaExceededErr
 So you can save stuff in localStorage, and it will stay there. However, this
 [will change](https://bugzilla.mozilla.org/show_bug.cgi?id=536509) in upcoming Firefox 43.
 
+## Safari pitfall
+
+The term "3rd-party cookie" (actually "3rd-party origin"), seems to have different
+meanings across browsers. For example, Safari by default _does_ send cookies
+to third-party domains, if it was visited before. There is a [very nice story](http://labs.fundbox.com/third-party-cookies-with-ie-at-2am/)
+about that by Alex Volkov. Worth reading.
+
 ## Detection
 
 If you need to detect if 3rd-party cookies are enabled, one option is to take
@@ -79,11 +87,27 @@ alert(thirdPartyCookiesEnabled);
 </html>
 {% endhighlight %}
 
-## Workaround
+## Workaround(s)
 
-There is one workaround though. If you really need to access cookies on another domain,
-just make sure that they are 1st-party. Essentially, it means **_redirects_**.
-So you can redirect user to a page on another domain, set the cookie there, and then
-immediately redirect him back. This is not the best user experience, but it still works.
+If you really need to access cookies on another domain, there are some ways to do so.
 
-Hope this will help someone.
+The most bullet-proof one is just make sure that cookies are 1st-party. Essentially, it means **_redirects_**. So you can redirect user to a page on another domain, set the
+cookie there, and then immediately redirect him back. This is not the best user
+experience, but it works.
+
+In some cases it is possible to use a subdomain for setting cookies. If you have
+access to `example.com` DNS, you can create a CNAME record `foo.example.com`,
+pointing to a server that needs to set cookies. Provided that cookies are not
+host-only (that is, they are set _with_ domain attribute specified), you can
+share cookies between those domains.
+
+## Conclusion
+
+What I have described above, is just a top of the iceberg. It is sufficient to
+understand the immediate side-effects of blocked cookies, but if you are really going
+to address this issue, you will most likely come across many caveats. And I believe
+there is no ideal solution to this problem.
+
+On the other hand, the 3rd-party cookies problem has been there for a while, and
+now you can find lots of nice articles and posts with all kinds of reusable ideas. Check out
+[this post by Alex Volkov](http://labs.fundbox.com/third-party-cookies-with-ie-at-2am/) for example.
