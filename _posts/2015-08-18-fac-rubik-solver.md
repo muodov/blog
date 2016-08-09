@@ -264,7 +264,7 @@ What seemed to be pretty easy from the beginning, turned out to be very
 tricky in details. I could not imagine I would have to learn statistical
 methods and clustering algorithms, dust off my school notes on electronics
 (though we only need the basics here), and discover a number of useful tools
-and services on the way. This is why I am so happy I had a chance to work on this.
+and services along the way. This is why I am so happy I had a chance to work on this.
 
 ![Rubik's Cube solver](/images/rubikmachine.jpg)
 
