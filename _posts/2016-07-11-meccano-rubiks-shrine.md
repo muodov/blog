@@ -55,7 +55,7 @@ parts was just a couple of millimeters.
 
 ![Some closeup photos](img)
 
-Wilbert tells more about the mechanical part on [his website](wiswin.nl/Meccano Rubik Cube Solver.htm).
+Wilbert tells more about the mechanical part on [his website](http://wiswin.nl/Meccano Rubik Cube Solver.htm).
 
 # Internals: What can we do better?
 
