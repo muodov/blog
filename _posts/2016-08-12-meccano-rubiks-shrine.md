@@ -15,6 +15,8 @@ comments:   true
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
+## Video
+
 <iframe src="https://www.youtube.com/embed/C9rCBjLGxJs" width="100%" height="360px" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
 
 Although our [FAC Solver](/hacking/2015/08/18/fac-rubik-solver/) has gathered 120K+ views
@@ -102,7 +104,7 @@ library that made movements smoother and more reliable. As before, I used the
 [MIN protocol](https://github.com/interactive-matter/MinProtocol) for RPi-Arduino
 communication.
 
-## Firmware: The sky is the limit
+## Firmware: Optimize everything!
 
 Since software part was my main responsibility in this project, the firmware was
 the very first thing I cared about. Pure RPi/Python implementation of FAC Solver
