@@ -42,7 +42,8 @@ If necessary, the PCB board and other electronics are
 easily accessible through the door on the back side. Moreover, the whole machine is
 assembled using normal Meccano parts that are available on the internet.
 
-![The Machine in transport box](/images/shrine/shrine-in-the-box.jpg)
+![The Rubik's Shrine in transport box](/images/shrine/shrine-in-the-box.jpg)
+*The Rubik's Shrine in transport box*
 
 Wilbert was inspired by the Dark Tower from the Lord of The Rings,
 so the look of the Shrine is meant to be quite pompous :)
@@ -87,6 +88,7 @@ We've come a long way with the PCB board. The first fersion looked something
 like this (using Arduino Uno):
 
 ![The first version of PCB board](/images/shrine/pcb-first.jpg)
+*The first version of PCB board*
 
 We chose [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini)
 because it is probably the most compact one. We made the first working prototype
@@ -97,6 +99,7 @@ motors. So eventually, the PCB became this (the red thing on the left is a volta
 level trigger needed for the LEDs):
 
 ![The PCB board behind the door on the back side](/images/shrine/closeup-inner.jpg)
+*PCB board behind the door on the back side*
 
 Arduino gave us much more stable pulse train, which allowed to reach higher
 speeds. We also used the great [AccelStepper](http://www.airspayce.com/mikem/arduino/AccelStepper/)
@@ -136,6 +139,7 @@ need to be able to block each other. Average solving process requires about 200
 blocking operations.
 
 ![Movement scheduling for 4-gripper setup](/images/shrine/scheduling.png)
+*Movement scheduling for 4-gripper setup*
 
 [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini),
 which we used initially, has only 2KB of RAM. After initializing
@@ -147,6 +151,7 @@ during the run. Pure serial communication is quite expensive, so it was causing
 an additional slowdown of the solving process.
 
 ![Arduino Pro Mini compile result](/images/shrine/arduino-compile.png)
+*Arduino Pro Mini compilation result*
 
 It is (kinda) possible to write C++ code for Arduino, but the dialect is very limited:
 for the sake of memory it doesn't have the C++ standard library, exceptions, etc.,
@@ -165,6 +170,7 @@ and has _**64KB**_ of RAM, but it has exactly the same form-factor as Arduino Pr
 We didn't even need to change the PCB connectors!
 
 ![Arduino Pro Mini vs Teensy 3](/images/shrine/arduino-vs-teensy.jpg)
+*Arduino Pro Mini vs Teensy 3*
 
 Well, 64K ought to be enough for anybody, at least in Arduino world :) With all this
 memory available, I could easily store information about the whole movement sequence at once.
@@ -181,6 +187,7 @@ to deal with ambient light and do the color balancing. It did fit well the bruta
 nature of the machine but obviously was not the most modern approach.
 
 ![Camera with flashlight on](/images/shrine/flashlight.jpg)
+*Camera with flashlight on*
 
 This time, we went fancy and used the Raspberry Pi Camera for color scanning the cube.
 Since it automatically adapts to the lighting conditions, it solved pretty much
