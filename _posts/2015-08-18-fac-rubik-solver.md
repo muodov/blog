@@ -49,8 +49,8 @@ grippers and scanner. However, the software part essentially did not exist.
 ### Main board
 First of all, we decided to replace Arduino board with Raspberry Pi. This
 was for a number of reasons: it seemed that we didn't really need low-level capabilities
-of Arduino, and I didn't feel like writing everything in the <del>retarded</del> dialect
-of C used by Arduino. Moreover, sophisticated cube solving algorithms required
+of Arduino, and I didn't feel like writing everything in the limited dialect
+of C++ used by Arduino. Moreover, sophisticated cube solving algorithms required
 quite a lot of memory, that Arduino cannot provide.
 
 The standard version of Raspberry Pi did not have enough GPIO pins, so

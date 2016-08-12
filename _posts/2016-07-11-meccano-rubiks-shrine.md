@@ -3,19 +3,19 @@ layout:     post
 title:      Meccano Rubik's Shrine
 summary:    The story of Rubik's Cube solvers continues!
 categories: hacking
-published:  false
+published:  true
 comments:   true
 ---
 
-<iframe src="https://www.youtube.com/embed/C9rCBjLGxJs" width="100%" height="360px" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+![The Rubik's Shrine](/images/shrine/overall.jpg)
 
-# References
+## References
 
 * <span class="red">**Order a replica, or a DIY kit**</span> at [Meccano Kinematics](https://meccanokinematics.com) (in development)
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
-# Introduction
+<iframe src="https://www.youtube.com/embed/C9rCBjLGxJs" width="100%" height="360px" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
 
 Although our [FAC Solver](/hacking/2015/08/18/fac-rubik-solver/) has gathered 120K+ views
 on YouTube, we felt that this was only the beginning. By the time we finished it,
@@ -40,12 +40,10 @@ If necessary, the PCB board and other electronics are
 easily accessible through the door on the back side. Moreover, the whole machine is
 assembled using normal Meccano parts that are available on the internet.
 
-![Some overall photos](img)
+![The Machine in transport box](/images/shrine/shrine-in-the-box.jpg)
 
 Wilbert was inspired by the Dark Tower from the Lord of The Rings,
 so the look of the Shrine is meant to be quite pompous :)
-
-![LOTR tower vs Rubik's Shrine](img)
 
 Being very careful about the details, Wilbert made sure all parts matched
 each other: all original rounded shiny Meccano strips, with 3-layered custom airbrush
@@ -53,7 +51,9 @@ finish on the plates. Brass gears put the final touch to the appearance of the m
 The fine-grained assembly was also very important: the distance between some
 parts was just a couple of millimeters.
 
-![Some closeup photos](img)
+![Some closeup photos](/images/shrine/closeup-cube.jpg)
+![Some closeup photos](/images/shrine/closeup-up.jpg)
+![Some closeup photos](/images/shrine/closeup-gripper.jpg)
 
 Wilbert tells more about the mechanical part on [his website](http://wiswin.nl/Meccano Rubik Cube Solver.htm).
 
@@ -78,15 +78,23 @@ processor gives to your process on RPi. Due to the presence of other processes,
 and, actually, the operating system itself, your program might be given different
 chunks of CPU time, which makes the generated pulse train unstable. For lower speeds,
 it is not a problem, but if the motor speed is high enough, it can be killing for
-performance: motors start hesitating.
+performance: motors start hesitating. To overcome this problem, we decided to use
+an Arduino board for the actual motor control.
 
-![Arduino and Teensy closeup photos](img)
+We've come a long way with the PCB board. The first fersion looked something
+like this (using Arduino Uno):
 
-To overcome this problem, we decided to use an Arduino board for the actual motor
-control. We chose [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini)
+![The first version of PCB board](/images/shrine/pcb-first.jpg)
+
+We chose [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini)
 because it is probably the most compact one. We made the first working prototype
 with it, and later replaced it with the [Teensy 3.2](https://www.pjrc.com/teensy/),
 which looks and feels almost identical, but has better performance.
+We also used [DRV8825](https://www.pololu.com/product/2133) for driving the stepper
+motors. So eventually, the PCB became this (the red thing on the left is a voltage
+level trigger needed for the LEDs):
+
+![The PCB board behind the door on the back side](/images/shrine/closeup-inner.jpg)
 
 Arduino gave us much more stable pulse train, which allowed to reach higher
 speeds. We also used the great [AccelStepper](http://www.airspayce.com/mikem/arduino/AccelStepper/)
@@ -102,8 +110,6 @@ proved to have a number of nasty caveats, so I wanted to do it right this time.
 I braced myself and prepared for the challenge of embedded systems programming,
 ready to implement things from scratch for saving a few bytes of RAM.
 
-![Arduino compile result](img)
-
 Probably the most difficult part was the movement optimization. The solving algorithm
 produces a solution sequence on Raspberry Pi, which then needs to be translated into
 a sequence of gripper movements. Then this data has to be transferred to the Arduino
@@ -117,7 +123,7 @@ rotate the whole cube first. We can rotate it around the vertical or horizontal 
 Whichever is better (leads to faster solution) depends on the current state of
 the grippers and on subsequent moves.
 
-![cube movement illustration](img)
+<!-- ![cube movement illustration](img) -->
 
 Generally, all grippers can move simultaneously. To do this, we need to have
 multiple parallel execution flows. Since Arduino is single-threaded,
@@ -126,6 +132,8 @@ On the other hand, due to the mechanical construction, some movements require
 the other grippers to be in specific positions, which means that parallel workers
 need to be able to block each other. Average solving process requires about 200
 blocking operations.
+
+![Movement scheduling for 4-gripper setup](/images/shrine/scheduling.png)
 
 [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini),
 which we used initially, has only 2KB of RAM. After initializing
@@ -136,7 +144,10 @@ to be buffered in Raspberry Pi and pushed to Arduino via serial connection
 during the run. Pure serial communication is quite expensive, so it was causing
 an additional slowdown of the solving process.
 
-It is possible to write C++ code for Arduino, but it is very limited,
+![Arduino Pro Mini compile result](/images/shrine/arduino-compile.png)
+
+It is (kinda) possible to write C++ code for Arduino, but the dialect is very limited:
+for the sake of memory it doesn't have the C++ standard library, exceptions, etc.,
 and in most cases it is a bad idea to use things like dynamic allocation. For
 spoiled developers like me, it is really tough to refrain from using abstract classes
 with a bunch of virtual methods and dynamically allocated arrays. It is really hard
@@ -151,7 +162,7 @@ which was a great improvement. Not only it is _way faster_ (thanks to ARM proces
 and has _**64KB**_ of RAM, but it has exactly the same form-factor as Arduino Pro Mini.
 We didn't even need to change the PCB connectors!
 
-![Arduino Pro Mini vs Teensy 3.2](img)
+![Arduino Pro Mini vs Teensy 3](/images/shrine/arduino-vs-teensy.jpg)
 
 Well, 64K ought to be enough for anybody, at least in Arduino world :) With all this
 memory available, I could easily store information about the whole movement sequence at once.
@@ -167,17 +178,19 @@ the low-end scanner made from LDRs and LEDs, it was
 to deal with ambient light and do the color balancing. It did fit well the brutal
 nature of the machine but obviously was not the most modern approach.
 
+![Camera with flashlight on](/images/shrine/flashlight.jpg)
+
 This time, we went fancy and used the Raspberry Pi Camera for color scanning the cube.
 Since it automatically adapts to the lighting conditions, it solved pretty much
-all of those color recognition problems. All I needed to do was to carefully pick
-the average colors from specific regions on the photos.
+all of those color recognition problems (we had to use bright LED flashlight though).
+All I needed to do was to carefully pick the average colors from specific regions on the photos.
 
-![scan photo](img)
+<!-- ![scan photo](img) -->
 
 As a bonus, each run is recorded on video and available on the Archive page in the
 touch interface. It was also quite handy during debugging.
 
-![video player photo](img)
+<!-- ![video player photo](img) -->
 
 ## Pi Display: the Final Touch
 
@@ -187,15 +200,19 @@ an awesome 7-inch touch screen for Raspberry Pi that perfectly fitted our model.
 I was pleasantly surprised that it just worked: after a couple of nights I had
 a nice-looking touch UI written in [Kivy](https://kivy.org/).
 
-![Touch UI (Patterns screen)](img)
+![Touch UI (Solving)](/images/shrine/touchscreen-solving.jpg)
+![Touch UI (Scan results)](/images/shrine/touchscreen-scanresult.jpg)
 
 Having a touch screen, I was able to add some extra functionality to the machine.
 In addition to a nice presentation of the scanning and solving results, it is
 possible to make some pretty [patterns](https://ruwix.com/the-rubiks-cube/rubiks-cube-patterns-algorithms/).
+
+![Touch UI (Patterns)](/images/shrine/patterns.png)
+
 I also made a special debug screen for manual control that practically made it
 unnecessary to use a laptop for testing.
 
-![Touch UI (Debug screen)](img)
+![Touch UI (Debug screen)](/images/shrine/debugscreen.png)
 
 # Public demonstrations and final words
 
@@ -204,11 +221,14 @@ the annual Meccano exhibition in Skegness, England. We even managed to win the
 5th prize, which is quite something considering that SkegEx is generally more
 about traditional mechanics rather than robotics and electronics.
 
-![SkegEx photo](img)
+![SkegEx photo](/images/shrine/skegex-5.jpg)
+![SkegEx photo](/images/shrine/skegex-2.jpg)
 
 But the biggest prize for us were the gleaming eyes of kids visiting the
 exposition. It was wonderful to see them pulling their parents to our table
 over and over, just to scramble the cube and start the machine once again.
+
+![SkegEx photo](/images/shrine/skegex-4.jpg)
 
 All in all, we are very satisfied with the result. Apart from all the hands-on experience,
 for me, as a software developer, it was very fun to work on something physical,
