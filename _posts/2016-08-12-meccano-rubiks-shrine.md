@@ -115,6 +115,8 @@ proved to have a number of nasty caveats, so I wanted to do it right this time.
 I braced myself and prepared for the challenge of embedded systems programming,
 ready to implement things from scratch for saving a few bytes of RAM.
 
+### Movements
+
 Probably the most difficult part was the movement optimization. The solving algorithm
 produces a solution sequence on Raspberry Pi, which then needs to be translated into
 a sequence of gripper movements. Then this data has to be transferred to the Arduino
@@ -128,7 +130,9 @@ rotate the whole cube first. We can rotate it around the vertical or horizontal 
 Whichever is better (leads to faster solution) depends on the current state of
 the grippers and on subsequent moves.
 
-<!-- ![cube movement illustration](img) -->
+<iframe height="170" width="200" scrolling="no" frameborder="0" src="https://rubiks3x3.com/algorithm/?moves=xDidXiyRirYiYLily&amp;sett=100001&amp;speed=1&amp;bg=ffffff"></iframe>
+
+### Synchronization
 
 Generally, all grippers can move simultaneously. To do this, we need to have
 multiple parallel execution flows. Since Arduino is single-threaded,
@@ -141,6 +145,8 @@ blocking operations.
 ![Movement scheduling for 4-gripper setup](/images/shrine/scheduling.png)
 *Movement scheduling for 4-gripper setup*
 
+### Memory management
+
 [Arduino Pro Mini](https://www.arduino.cc/en/Main/ArduinoBoardProMini),
 which we used initially, has only 2KB of RAM. After initializing
 objects for serial communication and motor control, there are approximately 200 bytes
@@ -150,7 +156,7 @@ to be buffered in Raspberry Pi and pushed to Arduino via serial connection
 during the run. Pure serial communication is quite expensive, so it was causing
 an additional slowdown of the solving process.
 
-![Arduino Pro Mini compile result](/images/shrine/arduino-compile.png)
+![Arduino Pro Mini compilation result](/images/shrine/arduino-compile.png)
 *Arduino Pro Mini compilation result*
 
 It is (kinda) possible to write C++ code for Arduino, but the dialect is very limited:
