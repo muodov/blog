@@ -33,7 +33,7 @@ friendly and appealing. We didn't want to make yet another hacky DIY machine,
 but something that would combine technology with design, something nice to
 build, to see, and to own.
 
-# Mechanical Design: Less Wiring, More Art
+## Mechanical Design: Less Wiring, More Art
 
 Having several decades of Meccano experience, Wilbert managed to design the machine
 that is much more compact than the FAC solver. To achieve the cleanest look possible,
@@ -60,7 +60,7 @@ parts was just a couple of millimeters.
 
 Wilbert tells more about the mechanical part on [his website](http://wiswin.nl/Meccano Rubik Cube Solver.htm).
 
-# Internals: What can we do better?
+## Internals: What can we do better?
 
 We were very satisfied with our previous project, the FAC Solver, but we also
 knew we could do better. We learned a lot about hardware parts like stepper
@@ -229,7 +229,7 @@ unnecessary to use a laptop for testing.
 
 ![Touch UI (Debug screen)](/images/shrine/debugscreen.png)
 
-# Public demonstrations and final words
+## Public demonstrations and final words
 
 When the Rubik's Shrine was almost finished, we presented it on [SkegEx 2016](http://www.skegex.nmmg.org.uk/),
 the annual Meccano exhibition in Skegness, England. We even managed to win the
