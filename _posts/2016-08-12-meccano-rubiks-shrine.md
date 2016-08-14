@@ -7,11 +7,17 @@ published:  true
 comments:   true
 ---
 
+## _Update:_
+
+_We've received some feedback from people who'd like to get their own replica of this
+and other models. That's very cool! Just [get in touch](mailto:wiswin@online.nl)
+with us, we are happy to help you to build one!_
+
 ![The Rubik's Shrine](/images/shrine/overall.jpg)
 
 ## References
 
-* <span class="red">**Order a replica, or a DIY kit**</span> at [Meccano Kinematics](https://meccanokinematics.com) (in development)
+* [Meccano Kinematics](https://meccanokinematics.com) website (in development)
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
@@ -200,12 +206,14 @@ Since it automatically adapts to the lighting conditions, it solved pretty much
 all of those color recognition problems (we had to use bright LED flashlight though).
 All I needed to do was to carefully pick the average colors from specific regions on the photos.
 
-<!-- ![scan photo](img) -->
+![The photo of the cube with marked regions for color recognition](/images/shrine/scan-photo.png)
+*The photo of the cube with marked regions for color recognition*
 
 As a bonus, each run is recorded on video and available on the Archive page in the
 touch interface. It was also quite handy during debugging.
 
-<!-- ![video player photo](img) -->
+![Every run is captured on video](/images/shrine/video.jpg)
+*Every run is captured on video*
 
 ## Pi Display: the Final Touch
 
