@@ -8,6 +8,10 @@ comments:   true
 update_date: 2015-09-15
 ---
 
+## _Update 2_:
+
+Make sure you check out the successor of this project - [Meccano Rubik's Shrine](http://blog.zok.pw/hacking/2016/08/12/meccano-rubiks-shrine/), it's even more awesome!
+
 ## _Update:_
 
 Since this post was published, we upgraded the scanner on the machine, and now the
