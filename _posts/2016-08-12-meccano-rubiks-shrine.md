@@ -18,7 +18,7 @@ Do-It-Yourself kits._
 
 ## References
 
-* [Meccano Kinematics](https://meccanokinematics.com) website (in development)
+* [Meccano Kinematics](https://meccanokinematics.net) website (in development)
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
