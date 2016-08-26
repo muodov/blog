@@ -11,7 +11,8 @@ comments:   true
 
 _We've received some feedback from people who'd like to get their own replica of this
 and other models. That's very cool! Just [get in touch](mailto:wiswin@online.nl)
-with us, we are happy to help you to build one!_
+with us, we are happy to help you to build one! We are also considering providing
+Do-It-Yourself kits._
 
 ![The Rubik's Shrine](/images/shrine/overall.jpg)
 
