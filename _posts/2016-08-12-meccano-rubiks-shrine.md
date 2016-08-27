@@ -10,15 +10,14 @@ comments:   true
 ## _Update:_
 
 _We've received some feedback from people who'd like to get their own replica of this
-and other models. That's very cool! Just [get in touch](mailto:wiswin@online.nl)
-with us, we are happy to help you to build one! We are also considering providing
-Do-It-Yourself kits._
+and other models. That's very cool! Have a look at the [project page](https://meccanokinematics.net/meccano-rubiks-shrine/#make-your-own-cube-solver)
+to get more details about this project._
 
 ![The Rubik's Shrine](/images/shrine/overall.jpg)
 
 ## References
 
-* [Meccano Kinematics](https://meccanokinematics.net) website (in development)
+* Project page on [Meccano Kinematics](https://meccanokinematics.net/meccano-rubiks-shrine/) website
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
 
