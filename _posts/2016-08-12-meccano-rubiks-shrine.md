@@ -13,7 +13,7 @@ _We've received some feedback from people who'd like to get their own replica of
 and other models. That's very cool! Have a look at the [project page](https://meccanokinematics.net/meccano-rubiks-shrine/#make-your-own-cube-solver)
 to get more details about this project._
 
-![The Rubik's Shrine](/images/shrine/overall.jpg)
+![The Rubik's Shrine](/images/shrine/overall.png)
 
 ## References
 
