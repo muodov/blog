@@ -5,6 +5,7 @@ summary:    The story of Rubik's Cube solvers continues!
 categories: hacking
 published:  true
 comments:   true
+update_date: 2016-11-21
 ---
 
 ## _Update:_

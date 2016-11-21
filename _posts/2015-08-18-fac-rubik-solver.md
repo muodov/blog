@@ -5,7 +5,7 @@ summary:    A story behind FAC Rubik's Cube solver machine by Wilbert Swinkels (
 categories: hacking
 published:  true
 comments:   true
-update_date: 2015-09-15
+update_date: 2016-11-21
 ---
 
 ## _Update 2_:
