@@ -17,9 +17,10 @@ to get more details about this project._
 
 ## References
 
-* Project page on [Meccano Kinematics](https://meccanokinematics.net/meccano-rubiks-shrine/) website
+* [Project page on Meccano Kinematics](https://meccanokinematics.net/meccano-rubiks-shrine/) website
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
+* More about Meccano and FAC system: [Meccano Kinematics](https://meccanokinematics.net/)
 
 ## Video
 
@@ -64,7 +65,7 @@ parts was just a couple of millimeters.
 ![Some closeup photos](/images/shrine/closeup-up.jpg)
 ![Some closeup photos](/images/shrine/closeup-gripper.jpg)
 
-Wilbert tells more about the mechanical part on [his website](http://wiswin.nl/Meccano Rubik Cube Solver.htm).
+Wilbert tells more about the mechanical part on [his website](https://meccanokinematics.net/meccano-rubiks-shrine/).
 
 ## Internals: What can we do better?
 

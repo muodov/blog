@@ -23,11 +23,11 @@ scanning process takes way less time. Check out the Hardware section.
 
 For those who don't feel like reading any further, here are some links:
 
-* [Project page](http://wiswin.nl/FAC system Rubik cube solver.htm) (a new website coming soon)
+* [Project page on Meccano Kinematics](https://meccanokinematics.net/fac-cube-solver/) website
 * Solving algorithm implementation: [GitHub](https://github.com/muodov/kociemba)
 * Final video: [YouTube](https://youtu.be/vpAKfSYueMI)
 * Other Wilbert's machines: [YouTube channel](https://www.youtube.com/user/Meccanokinematics)
-* More about FAC system: [FAC system](http://www.wiswin.nl/FAC%20system.htm)
+* More about Meccano and FAC system: [Meccano Kinematics](https://meccanokinematics.net/)
 
 ## Introduction
 
@@ -35,14 +35,14 @@ About three months ago I was introduced to [Wilbert Swinkels](http://wiswin.nl).
 Normally you don't meet people with such an amazing blend of skills and passion
 for creating [awesomeness](https://www.youtube.com/user/Meccanokinematics), so
 this was a great luck for me when he offered to help him with the [Rubik's cube
-solving machine](http://wiswin.nl/FAC system Rubik cube solver.htm).
+solving machine](https://meccanokinematics.net/fac-cube-solver/).
 
 The machine looked absolutely marvelous. Just like all other Wilbert's creations,
 it is a piece of art by itself. Besides, color cubes had already [carried me away once](https://play.google.com/store/apps/details?id=com.muodov.papercube). With no doubt,
 I accepted his offer.
 
 By the time I met Wilbert, he had been working on the machine for almost five years.
-It is quite an [interesting story](http://wiswin.nl/FAC system Rubik cube solver.htm),
+It is quite an [interesting story](https://meccanokinematics.net/fac-cube-solver/),
 with a number of great successes, disappointing failures, and invaluable experience.
 When I started working on it, most of the hardware-related problems had already been solved.
 There was even a proof-of-concept program for Arduino that could control
