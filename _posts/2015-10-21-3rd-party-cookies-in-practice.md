@@ -5,7 +5,7 @@ summary:    Quick overview of the effects of disabling 3rd-party cookies in brow
 categories: web
 published:  true
 comments:   true
-update_date: 2016-07-11
+update_date: 2018-10-31
 ---
 
 Recent days I was building a cross-site communication tool.
@@ -40,6 +40,7 @@ will be thrown, but `document.cookie` **_will always return an empty string_**, 
 if you set it to something.
 * No cookies in CORS requests too, even if you use `.withCredentials` parameter. Cookie
 header from server is just ignored.
+* 3rd-level subdomains and sibling 3rd-level subdomains are not considered 3rd-party: foo.example.com can load an iframe pointing to bar.example.com and it will be allowed to set cookies.
 
 `localStorage`/`sessionStorage` is a bit more tricky:
 
